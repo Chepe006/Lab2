@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio 2 - Eventos en JavaScript</title>
+    <title>Laboratorio 2 - Eventos JavaScript - UGB</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Laboratorio 2: Eventos en JavaScript</h1>
+    <header>
+        <img src="https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fmooc.ugb.edu.sv%2Fpages%2Fcontacto.php&ved=0CBYQjRxqFwoTCKj2msPA4ZIDFQAAAAAdAAAAABAe&opi=89978449" alt="Universidad Gerardo Barrios" class="logo">
+        <h1>Laboratorio 2 - Primer Cómputo<br>Semana 5</h1>
+    </header>
+
     <div class="grid-container">
-        <div id="evento1" class="evento">Evento 1: Click aquí</div>
-        <div id="evento2" class="evento">Evento 2: Pasa el mouse</div>
-        <div id="evento3" class="evento">Evento 3: Saca el mouse</div>
-        <div id="evento4" class="evento"><input type="text" id="input4" placeholder="Escribe algo"></div>
-        <div id="evento5" class="evento"><input type="text" id="input5" placeholder="Enfoca aquí"></div>
-        <div id="evento6" class="evento"><input type="text" id="input6" placeholder="Desenfoca"></div>
-        <div id="evento7" class="evento">Evento 7: Doble click</div>
-        <div id="evento8" class="evento">Evento 8: Presiona una tecla</div>
+        <div class="evento" id="e1" tabindex="0">1. Click (cambia color)</div>
+        <div class="evento" id="e2">2. Mouse over (aumenta tamaño)</div>
+        <div class="evento" id="e3">3. Mouse out (restaura tamaño)</div>
+        <div class="evento" id="e4" tabindex="0">4. Doble click (cambia texto)</div>
+        
+        <div class="evento" id="e5"><input type="text" placeholder="Escribe → oninput"></div>
+        <div class="evento" id="e6"><input type="text" placeholder="Enfoca → onfocus"></div>
+        <div class="evento" id="e7"><input type="text" placeholder="Desenfoca → onblur"></div>
+        
+        <div class="evento" id="e8" tabindex="0">8. Presiona tecla (keydown)</div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

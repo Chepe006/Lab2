@@ -1,49 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Evento 1: onclick
-    const evento1 = document.getElementById('evento1');
-    evento1.addEventListener('click', () => {
-        alert('¡Hiciste click en Evento 1!');
+
+    // 1. click
+    document.getElementById('e1').addEventListener('click', function() {
+        this.style.background = 'linear-gradient(135deg, #ff9a9e, #fad0c4)';
+        this.textContent = '¡Click detectado!';
     });
 
-    // Evento 2: onmouseover
-    const evento2 = document.getElementById('evento2');
-    evento2.addEventListener('mouseover', () => {
-        evento2.style.backgroundColor = '#ffcc00';
+    // 2. mouseover
+    document.getElementById('e2').addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.08)';
     });
 
-    // Evento 3: onmouseout
-    const evento3 = document.getElementById('evento3');
-    evento3.addEventListener('mouseout', () => {
-        evento3.style.backgroundColor = '#add8e6';
+    // 3. mouseout
+    document.getElementById('e3').addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
     });
 
-    // Evento 4: onkeydown (en input)
-    const input4 = document.getElementById('input4');
-    input4.addEventListener('keydown', (e) => {
-        console.log(`Tecla presionada: ${e.key}`);
+    // 4. dblclick
+    document.getElementById('e4').addEventListener('dblclick', function() {
+        this.textContent = '¡Doble click!';
+        this.style.background = 'linear-gradient(135deg, #a8e063, #56ab2f)';
     });
 
-    // Evento 5: onfocus (en input)
-    const input5 = document.getElementById('input5');
-    input5.addEventListener('focus', () => {
-        input5.style.border = '2px solid green';
+    // 5. input (cambio en valor del input)
+    document.querySelector('#e5 input').addEventListener('input', function() {
+        this.parentElement.style.background = 'linear-gradient(135deg, #f6d365, #fda085)';
+        this.parentElement.textContent = 'Escribiendo...';
     });
 
-    // Evento 6: onblur (en input)
-    const input6 = document.getElementById('input6');
-    input6.addEventListener('blur', () => {
-        input6.style.border = '1px solid #ccc';
+    // 6. focus
+    document.querySelector('#e6 input').addEventListener('focus', function() {
+        this.parentElement.style.border = '4px solid #4caf50';
+        this.parentElement.style.background = '#e8f5e9';
     });
 
-    // Evento 7: ondblclick
-    const evento7 = document.getElementById('evento7');
-    evento7.addEventListener('dblclick', () => {
-        evento7.textContent = '¡Doble click detectado!';
+    // 7. blur
+    document.querySelector('#e7 input').addEventListener('blur', function() {
+        this.parentElement.style.border = 'none';
+        this.parentElement.style.background = 'linear-gradient(135deg, #a1c4fd, #c2e9fb)';
     });
 
-    // Evento 8: onkeypress (en el div, pero captura teclas globales si enfocado)
-    const evento8 = document.getElementById('evento8');
-    evento8.addEventListener('keypress', (e) => {
-        alert(`Tecla presionada: ${e.key}`);
+    // 8. keydown (necesita tabindex para que el div reciba foco)
+    document.getElementById('e8').addEventListener('keydown', function(e) {
+        this.textContent = `Tecla presionada: ${e.key}`;
+        this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
     });
+
 });
